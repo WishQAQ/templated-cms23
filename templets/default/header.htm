@@ -1,0 +1,22 @@
+<header class="header-frontend">
+    <div class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{dede:global.cfg_basehost/}"><img src="{dede:global.cfg_basehost/}/style/images/logo.png"/></a>
+            </div>
+            <div class="navbar-collapse collapse" style="height: 1px;">
+                <ul class="nav navbar-nav">
+                    <li><a href="{dede:global.cfg_basehost/}">首页</a></li>
+                    {dede:channel row='6'  type=top}
+                    <li><a href="[field:typeurl/]">[field:typename/]</a></li>
+                    {/dede:channel}
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>

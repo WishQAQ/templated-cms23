@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>{dede:field.seotitle /}</title>
+		<meta name="keywords" content="{dede:field name='keywords'/}" />
+		<meta name="description" content="{dede:field name='description'  function='html2text(@me)'/}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{dede:global.cfg_basehost/}/style/css/animate.min.css" type="text/css" />
+		<link rel="stylesheet" href="{dede:global.cfg_basehost/}/style/css/bootstrap.css" type="text/css" />
+		<link rel="stylesheet" href="{dede:global.cfg_basehost/}/style/css/style.css" type="text/css" />
+		<script src="{dede:global.cfg_basehost/}/style/js/jquery-1.10.2.min.js"></script>
+		<script src="{dede:global.cfg_basehost/}/style/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+	{dede:include filename='header.htm'/}
+    <div class="casebg">
+	    <div class="container animated bounceInUp">
+	    	<h2>案例展示</h2>
+	    	<p>力求视觉与交互的完美契合，以规范的流程和专注的态度，为您提供全方位的设计服务。</p>
+	    </div>
+    </div>
+    <div class="newnav">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-lg-1 col-xs-3"><a href="/about/">关于我们</a></div>
+                <div class="col-lg-1 col-xs-3"><a href="/case/" class="current">案例展示</a></div>
+                <div class="col-lg-1 col-xs-3"><a href="/news/">新闻动态</a></div>
+                <div class="col-lg-1 col-xs-3"><a href="/contact/">联系我们  </a></div>
+    		</div>
+    	</div>
+    </div>
+    <div class="container case mt">
+
+			<div class="row">
+				{dede:list pagesize='8' }
+				<div class="col-lg-3 col-xs-12 casepic">
+					<div class="recent-work-wrap">
+			          <a href="[field:arcurl/]">
+			          <img class="img-responsive" src="[field:picname/]" alt="[field:title/]">
+				          <div class="overlay">
+					            <div class="recent-work-inner">
+					              <h3>[field:title/]</h3>
+					            </div>
+				          </div>
+				       </a>
+			        </div>
+				</div>
+				{/dede:list}
+				
+			</div>
+		</div>
+	<nav class="pages">
+		  <ul class="pagination">
+		    {dede:pagelist istitem='pre,next,' listsize='5' /}
+		  </ul>
+	</nav>
+	<div class="mt copy">
+        {dede:include filename='footer.htm'/}
+    </div>
+	</body>
+</html>

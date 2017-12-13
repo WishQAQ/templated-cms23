@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>{dede:field.seotitle /}</title>
+		<meta name="keywords" content="{dede:field name='keywords'/}" />
+		<meta name="description" content="{dede:field name='description'  function='html2text(@me)'/}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{dede:global.cfg_basehost/}/style/css/animate.min.css" type="text/css" />
+		<link rel="stylesheet" href="{dede:global.cfg_basehost/}/style/css/bootstrap.css" type="text/css" />
+		<link rel="stylesheet" href="{dede:global.cfg_basehost/}/style/css/style.css" type="text/css" />
+		<script src="{dede:global.cfg_basehost/}/style/js/jquery-1.10.2.min.js"></script>
+		<script src="{dede:global.cfg_basehost/}/style/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+	{dede:include filename='header.htm'/}
+    <div class="newbg">
+	    <div class="container animated bounceInUp">
+	    	<h2>新闻资讯</h2>
+	    	<p>这里有最新的公司动态，这里有最新的网站设计、移动端设计、网页相关内容与你分享！</p>
+	    </div>
+    </div>
+     <div class="newnav">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-lg-1 col-xs-3"><a href="/about/">关于我们</a></div>
+                <div class="col-lg-1 col-xs-3"><a href="/case/">案例展示</a></div>
+                <div class="col-lg-1 col-xs-3"><a href="/news/" class="current">新闻动态</a></div>
+                <div class="col-lg-1 col-xs-3"><a href="/contact/">联系我们  </a></div>
+    		</div>
+    	</div>
+    </div>
+    <div class="newlist">
+    	<div class="container">
+			{dede:list pagesize='4' }
+    		<div class="new">
+    			<a href="[field:arcurl/]">
+	    			<div class="col-lg-2 col-xs-3 shijian">
+	    				<h2>[field:pubdate function='strftime("%d",@me)'/]</h2>
+	    				<p>[field:pubdate function='strftime("%Y-%m",@me)'/]</p>
+	    				<p>[field:typelink/]</p>
+	    			</div>
+	    			<div class="col-lg-10 col-xs-9">
+	    				<h2 class="title">[field:title/]</h2>
+	    				<p class="text">[field:description/]</p>
+	    			    <p class="num">浏览次数：[field:click/]</p>
+	    			</div>
+    			</a>
+    		</div>
+    		{/dede:list}
+    	</div>
+    </div>
+    <nav class="pages">
+		  <ul class="pagination">
+		    {dede:pagelist istitem='pre,next,' listsize='5' /}
+		  </ul>
+	</nav>
+	<div class="mt copy">
+        {dede:include filename='footer.htm'/}
+    </div>
+	</body>
+</html>
